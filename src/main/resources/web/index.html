@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler - Source➔TAC  </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app">
+    <header class="header">
+        <div class="header-logo">Compiler <span>SOURCE ➔ TAC</span></div>
+        <div class="header-sep"></div>
+
+        <select class="examples-select">
+            <option value="" disabled selected>Load example…</option>
+            <option value="Counting loop">Counting loop</option>
+            <option value="Conditionals">Conditionals</option>
+            <option value="Arrays">Arrays</option>
+            <option value="Nested arrays">Nested arrays</option>
+        </select>
+
+        <button class="run-btn">
+            Compile <kbd>ctrl↵</kbd>
+        </button>
+    </header>
+
+    <div class="panels">
+
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-label">Source</span>
+            </div>
+            <div class="panel-body">
+                <div class="editor-wrap">
+                    <div class="line-numbers">
+                    </div>
+                    <textarea class="editor-textarea" spellcheck="false" autocapitalize="none" autocorrect="off">{
+    int i ; int j ; float v ; float x ; float[100] a ;
+    while( true ) {
+        do i = i+1 ; while( a[i] < v) ;
+        do j = j-1 ; while( a[j] > v) ;
+        if( i >= j ) break;
+        x = a[i] ; a[i] = a[j] ; a[j] = x ;
+    }
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-label">Pretty Print</span>
+            </div>
+            <div class="panel-body">
+                <div class="empty-state">Run the compiler to see output.</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-label">Three-Address Code</span>
+            </div>
+            <div class="panel-body">
+                <div class="empty-state">Run the compiler to see output.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="status-bar is-ready">
+        <div class="status-bar-header">Status</div>
+        <div class="status-item">
+            <span class="status-item-msg">Ready.</span>
+        </div>
+    </div>
+
+</div>
+<script src="js/classes.js"></script>
+<script src="js/compiler.js"></script>
+</body>
+</html>
